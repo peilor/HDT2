@@ -15,7 +15,7 @@ public class Calculadora {
     public static void main(String[] args) {
         try{
             // Abrimos el archivo
-            FileInputStream fstream = new FileInputStream("C:\\Users\\Acer\\Documents\\UVG\\4to semestre\\Alg Estructura Datos\\HDT2\\HDT2\\Calculadora.txt");
+            FileInputStream fstream = new FileInputStream("LeerArchivo.java");
             // Creamos el objeto de entrada
             DataInputStream entrada = new DataInputStream(fstream);
             // Creamos el Buffer de Lectura
