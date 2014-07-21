@@ -3,14 +3,12 @@
 import java.io.*;
 
 public class Calculadora {
-    private static Stack<String> datos;
+    private static Stack<Integer> datos;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        datos= new StackVector<String>();
-        //Stack<String> datos = new StackVector<String>();
-        //Stack<Integer> datos = new StackVector<Integer>();
+        datos= new StackVector<Integer>();
         //Inicia codigo tomado de internet para la lectura de un archivo .txt
         try{
             // Abrimos el archivo
@@ -22,7 +20,7 @@ public class Calculadora {
             String strLinea;
             // Leer el archivo linea por linea
             while ((strLinea = buffer.readLine()) != null)   {
-                datos.push(strLinea);
+                datos.push(Integer.parseInt(strLinea));
                 // Imprimimos la línea por pantalla
                 System.out.println (strLinea);
             }
@@ -40,31 +38,22 @@ public class Calculadora {
         }
     }
     
+    
     private static void operaciones(){
-       String dato=datos.pop();
-       int result=0;
+       int dato=datos.pop();
+       
        //System.out.println(dato);
-       char[] signo=dato.toCharArray();
-
-       for(int i=0; i<signo.length; i++){
-           int num1=Integer.parseInt(datos.pop());
-           int num2=Integer.parseInt(datos.pop());
-           if(signo[i]=='+'){            
-               result=num1+num2;
-               datos.push(Integer.toString(result));
+       char[] arreglo= dato.toCharArray();
+       for(int i=0; i<arreglo.length; i++){
+           char result = dato.charAt(i);
+                
+           try{
+               datos.push(Integer.parseInt(result));
+           }catch
+                if  
+                     
+               
            }
-           if(signo[i]=='-'){            
-               result=num1-num2;
-               datos.push(Integer.toString(result));
-           }
-           if(signo[i]=='*'){            
-               result=num1*num2;
-               datos.push(Integer.toString(result));
-           }
-           if(signo[i]=='/'){            
-               result=num1/num2;
-               datos.push(Integer.toString(result));
-           }
-        }   
-   }
+    }   
+   
 }
