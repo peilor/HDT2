@@ -3,12 +3,12 @@
 import java.io.*;
 
 public class Calculadora {
-    private static Stack<Integer> datos;
+    private static Stack<String> datos;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        datos= new StackVector<Integer>();
+        datos= new StackVector<String>();
         //Inicia codigo tomado de internet para la lectura de un archivo .txt
         try{
             // Abrimos el archivo
@@ -20,7 +20,7 @@ public class Calculadora {
             String strLinea;
             // Leer el archivo linea por linea
             while ((strLinea = buffer.readLine()) != null)   {
-                datos.push(Integer.parseInt(strLinea));
+                datos.push((strLinea));
                 // Imprimimos la línea por pantalla
                 System.out.println (strLinea);
             }
@@ -36,35 +36,35 @@ public class Calculadora {
             System.out.println(datos.pop());
             operaciones();
         }
+        
     }
     
     
     private static void operaciones(){
-       int dato=datos.pop();
+       String dato=datos.pop();
        int resultado;
        //System.out.println(dato);
        char[] arreglo= dato.toCharArray();
        for(int i=0; i<arreglo.length; i++){
-           char result = dato.charAt(i);
-             
-           try{
-               datos.push(Integer.parseInt(result));
-           }catch(){
-                if(result=='+'){
+           char result = dato.charAt(i); 
+                if(arreglo[i]=='+'){
                     datos.pop();
       
                 }
-                if(result=='-'){
-                    
+                if(arreglo[i]=='-'){
+                    datos.pop();
+      
                 }
-                if(result=='*'){
-                    
+                if(arreglo[i]=='*'){
+                    datos.pop();
+      
                 }
-                if(result=='/'){
-                    
+                if(arreglo[i]=='/'){
+                    datos.pop();
+      
                 }
+                
            }     
-        }
-    }   
-   
+    }
+  
 }
