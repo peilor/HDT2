@@ -3,12 +3,14 @@
 import java.io.*;
 
 public class Calculadora {
-    private static Stack<String> datos;
+    private static Stack<Integer> datos;
+    //public static String strLinea;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        datos= new StackVector<String>();
+        datos= new StackVector<Integer>();
+        String strLinea=" ";   
         //Inicia codigo tomado de internet para la lectura de un archivo .txt
         try{
             // Abrimos el archivo
@@ -17,12 +19,13 @@ public class Calculadora {
             DataInputStream entrada = new DataInputStream(fstream);
             // Creamos el Buffer de Lectura
             BufferedReader buffer = new BufferedReader(new InputStreamReader(entrada));
-            String strLinea;
+            
             // Leer el archivo linea por linea
             while ((strLinea = buffer.readLine()) != null)   {
-                datos.push((strLinea));
+              
                 // Imprimimos la línea por pantalla
                 System.out.println (strLinea);
+                
             }
             // Cerramos el archivo
             entrada.close();
@@ -32,39 +35,48 @@ public class Calculadora {
         } 
         //Termina codigo tomado de internet
         
-        while (!datos.empty()){
-            System.out.println(datos.pop());
-            operaciones();
-        }
+       
         
+       int resultado=0;
+       int num1 = 0;
+       int num2 = 0;
+   
+       System.out.println (strLinea.length());
+       for(int i=0; i<strLinea.length(); i++){
+                if(strLinea.charAt(i)=='+'){
+                    num1 = datos.pop();
+                    num2 = datos.pop();
+                    resultado = num1 + num2;
+                    datos.push(resultado);                   
+                }
+                if(strLinea.charAt(i)=='-'){
+                    num1 = datos.pop();
+                    num2 = datos.pop();
+                    resultado = num1 - num2;
+                    datos.push(resultado);
+                }
+                if(strLinea.charAt(i)=='*'){
+                    num1 = datos.pop();
+                    num2 = datos.pop();
+                    resultado = num1 * num2;
+                    datos.push(resultado);
+                }
+                if(strLinea.charAt(i)=='/'){
+                    num1 = datos.pop();
+                    num2 = datos.pop();
+                    resultado = num1 / num2;
+                    datos.push(resultado);
+                }
+                 if(strLinea.charAt(i)==' '){
+                    
+                }
+                else
+                {
+                   int dato1=(int)strLinea.charAt(i);
+                   datos.push(dato1);
+                }
+      
+        }
+       System.out.println (datos.pop()); 
     }
-    
-    
-    private static void operaciones(){
-       String dato=datos.pop();
-       int resultado;
-       //System.out.println(dato);
-       char[] arreglo= dato.toCharArray();
-       for(int i=0; i<arreglo.length; i++){
-           char result = dato.charAt(i); 
-                if(arreglo[i]=='+'){
-                    datos.pop();
-      
-                }
-                if(arreglo[i]=='-'){
-                    datos.pop();
-      
-                }
-                if(arreglo[i]=='*'){
-                    datos.pop();
-      
-                }
-                if(arreglo[i]=='/'){
-                    datos.pop();
-      
-                }
-                
-           }     
-    }
-  
 }
