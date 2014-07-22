@@ -41,19 +41,30 @@ public class Calculadora {
     
     private static void operaciones(){
        int dato=datos.pop();
-       
+       int resultado;
        //System.out.println(dato);
        char[] arreglo= dato.toCharArray();
        for(int i=0; i<arreglo.length; i++){
            char result = dato.charAt(i);
-                
+             
            try{
                datos.push(Integer.parseInt(result));
-           }catch
-                if  
-                     
-               
-           }
+           }catch(){
+                if(result=='+'){
+                    datos.pop();
+      
+                }
+                if(result=='-'){
+                    
+                }
+                if(result=='*'){
+                    
+                }
+                if(result=='/'){
+                    
+                }
+           }     
+        }
     }   
    
 }
