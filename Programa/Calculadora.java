@@ -3,10 +3,10 @@ import java.io.*;
 /**
  *
  * @author Pablo Argueta, Carnet: 13028
- * @author Aarón Girón, Carnet: 13
+ * @author Aarón Girón, Carnet: 13042
  * @author Esteban Barrera, Carnet: 13
  * 
- * El código para la lectura del archivo de texto fue tomado de la página: http://codigosparadesarrolladores.blogspot.com/2014/06/codigo-java-leer-archivos-de-texto.html
+ * El código para la lectura del archivo de texto fue tomado de la página: http://codigomaldito.blogspot.com/2011/06/como-leer-un-archivo-de-texto-en-java.html
  * 
  */
 
@@ -53,7 +53,8 @@ public class Calculadora {
             System.err.println("Ocurrio un error: " + e.getMessage());
         } 
          
-       int resultado=0;
+       
+	   int resultado=0;
        int num1 = 0;
        int num2 = 0;   
 	   /**
