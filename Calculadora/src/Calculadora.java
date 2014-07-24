@@ -10,20 +10,22 @@ public class Calculadora {
      */
     public static void main(String[] args) {
         datos= new StackVector<Integer>();
-        String strLinea=" ";   
+        String strLinea1=" ";
+        String strLinea= " ";		
         //Inicia codigo tomado de internet para la lectura de un archivo .txt
         try{
             // Abrimos el archivo
-            FileInputStream fstream = new FileInputStream("C:\\Users\\Acer\\Documents\\UVG\\4to semestre\\Alg Estructura Datos\\HDT2\\HDT2\\calculadora.txt");
+            FileInputStream fstream = new FileInputStream("texto.txt");
             // Creamos el objeto de entrada
             DataInputStream entrada = new DataInputStream(fstream);
             // Creamos el Buffer de Lectura
             BufferedReader buffer = new BufferedReader(new InputStreamReader(entrada));
             
             // Leer el archivo linea por linea
-            while ((strLinea = buffer.readLine()) != null)   {
+            while ((strLinea1 = buffer.readLine()) != null)   {
               
                 // Imprimimos la línea por pantalla
+				strLinea = strLinea1;
                 System.out.println (strLinea);
                 
             }
