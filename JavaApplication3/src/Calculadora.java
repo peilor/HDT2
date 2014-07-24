@@ -3,11 +3,11 @@ import java.io.*;
 /**
  *
  * @author Pablo Argueta, Carnet: 13028
- * @author Aarón Girón, Carnet: 13
+ * @author Aarón Girón, Carnet: 13042
  * @author Esteban Barrera, Carnet: 13
  * 
  * El código para la lectura del archivo de texto fue tomado de la página: http://codigosparadesarrolladores.blogspot.com/2014/06/codigo-java-leer-archivos-de-texto.html
- * 
+ * y tambien  http://codigomaldito.blogspot.com/2011/06/como-leer-un-archivo-de-texto-en-java.html
  */
 
 /**
@@ -39,7 +39,7 @@ public class Calculadora {
                  /**
                  * Se imprime la cadena leída
                  */
-				strLinea = strLinea1;
+		strLinea = strLinea1;
                 System.out.println ("Operacion ingresada: "+strLinea);
                 
             }

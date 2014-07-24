@@ -1,7 +1,7 @@
 /**
  *
  * @author Pablo Argueta, Carnet: 13028
- * @author Aarón Girón, Carnet: 13
+ * @author Aarón Girón, Carnet: 13042
  * @author Esteban Barrera, Carnet: 13
  * 
  */
