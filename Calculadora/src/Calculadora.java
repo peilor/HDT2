@@ -26,7 +26,7 @@ public class Calculadora {
               
                 // Imprimimos la línea por pantalla
 				strLinea = strLinea1;
-                System.out.println (strLinea);
+                System.out.println ("Operacion ingresada: "+strLinea);
                 
             }
             // Cerramos el archivo
@@ -41,20 +41,18 @@ public class Calculadora {
         
        int resultado=0;
        int num1 = 0;
-       int num2 = 0;
-   
-       System.out.println (strLinea.length());
+       int num2 = 0;   
        for(int i=0; i<strLinea.length(); i++){
                 if(strLinea.charAt(i)=='+'){
                     num1 = datos.pop();
                     num2 = datos.pop();
                     resultado = num1 + num2;
-                    datos.push(resultado);                   
+                    datos.push(resultado);
                 }
                 if(strLinea.charAt(i)=='-'){
                     num1 = datos.pop();
                     num2 = datos.pop();
-                    resultado = num1 - num2;
+                    resultado = num2 - num1;
                     datos.push(resultado);
                 }
                 if(strLinea.charAt(i)=='*'){
@@ -66,19 +64,15 @@ public class Calculadora {
                 if(strLinea.charAt(i)=='/'){
                     num1 = datos.pop();
                     num2 = datos.pop();
-                    resultado = num1 / num2;
+                    resultado = num2 / num1;
                     datos.push(resultado);
                 }
-                 if(strLinea.charAt(i)==' '){
-                    
-                }
-                else
+                if (Character.getNumericValue(strLinea.charAt(i))>=0)
                 {
-                   int dato1=(int)strLinea.charAt(i);
-                   datos.push(dato1);
-                }
-      
+				   int dato=Character.getNumericValue(strLinea.charAt(i));
+                   datos.push(dato);
+                }      
         }
-       System.out.println (datos.pop()); 
+       System.out.println ("El resultado de las operaciones es: "+datos.pop()); 
     }
 }
